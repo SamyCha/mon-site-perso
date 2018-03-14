@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lesson.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @lesson.category %>
+</p>
+
+<p>
+  <strong>Tool:</strong>
+  <%= @lesson.tool %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @lesson.description %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @lesson.tag %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @lesson.source %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @lesson.reference %>
+</p>
+
+<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Back', lessons_path %>
