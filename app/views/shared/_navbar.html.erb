@@ -6,6 +6,8 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+     <%= link_to "Mon fonctionnement", mon_fonctionnement_path, class: "navbar-wagon-item navbar-wagon-link"  %>
+
    <%= link_to "Qui suis-je", qui_path, class: "navbar-wagon-item navbar-wagon-link"  %>
     <% if user_signed_in? %>
 
