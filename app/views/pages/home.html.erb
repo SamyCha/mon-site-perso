@@ -1,7 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<section class="background">
 
-<%= link_to "créer une lesson", new_lesson_path, class:"btn btn-info" %>
-<%= link_to "créer un tag", new_label_path, class:"btn btn-info" %>
-
-<%= link_to "voir les lessons", lessons_path, class:"btn btn-info" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-1"></div>
+      <div class="col-xs-5">
+        <h2><strong>SamyCha</strong></h2>
+        <h4><strong>Full Stack Developper</strong></h4>
+        <p>Pour des sites web dynamiques et responsives</p>
+        <%= image_tag "rails.png", width:120 %> <%= image_tag "javascript.png", width:70 %> <%= image_tag "bootstrap.png", width:80 %> <%= image_tag "heroku.png", width:80 %>
+      </div>
+      <div class="col-xs-6">
+      </div>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h4><strong>Mes réalisations:</strong></h4>
+    </div>
+    <div class="row">
+      <div class="col-xs-4 text-center">
+        <%= image_tag "my_clean_car.png", width:100 %><br>
+        <strong>My Clean Car</strong><br>
+        WebApp
+      </div>
+      <div class="col-xs-4 text-center">
+      <%= image_tag "les_armoires.jpg", width:350 %><br>
+        <strong>Les armoires de Paris</strong><br>
+        MarketPlace
+      </div>
+      <div class="col-xs-4 text-center"></div>
+    </div>
+  </div>
+</div>

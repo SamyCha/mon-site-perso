@@ -2,7 +2,10 @@
 <div class="container">
   <h2>Outils de developppement:</h2>
   <% @lessons.each do |lesson| %>
-  <strong><%= lesson.reference %>.</strong><%= lesson.name %> <span class="badge badge-info"><%= lesson.tag %></span>
+  <strong><%= lesson.reference %>.</strong><%= lesson.name %>
+  <% lesson.labels.each do |label| %>
+  <span class="badge badge-info"><%= label.name %></span>
+  <% end %>
   <%= link_to 'Voir', lesson %>
   <br>
   <% end %>

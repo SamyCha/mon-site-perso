@@ -9,3 +9,19 @@
      color: white;
   }
 }
+
+// Homepage bakground image
+.background  {
+  background-image: url('background.jpg');
+  //background-color: grey;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 50vh;
+  color: purple;
+}
+
+section {
+padding-top: 4rem;
+
+}
