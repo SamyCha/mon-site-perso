@@ -1,18 +1,31 @@
-
-<%= simple_form_for(@lesson) do |f| %>
+<div class='container'>
+  <%= simple_form_for(@lesson) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :category %>
-    <%= f.input :tool %>
-    <%= f.input :description %>
-    <%= f.input :tag %>
-    <%= f.input :source %>
-    <%= f.input :reference %>
-  </div>
+    <%= f.label :category %>
+    <%= f.select :category, ["Back-end", "Front-end", "Deploiement", "Base de données", "Tests", "Template"], prompt: "A sélectionner..." %><br>
+    <%= f.label :tool %>
+    <%= f.select :tool, ["rails", "html", "css", "javascript", "PostGrSQL"], prompt: "A sélectionner..."  %><br>
+    <label>Ajouter des Tags à votre lesson (max 8)</label>
+    <% for label in Label.all %>
+    <div>
+    <p><%= check_box_tag "lesson[label_ids][]", label.id, @lesson.labels.include?(label) %>
+        <%= label.name %></p>
+      </div>
+      <% end %><br>
+      <%= f.label :description %>
+      <%= f.text_area :description, rows:4, cols:125, placeholder: "Description ici" %>
+      <%= f.label :code %>
+      <%= f.text_area :code, rows:4, cols:125, placeholder: "Code ici" %>
+      <%= f.input :tag %>
+      <%= f.input :source %>
+      <%= f.input :reference %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+    <% end %>
   </div>
-<% end %>

@@ -2,33 +2,38 @@
 
 <div class="container">
   <h3><strong><%= @lesson.reference %>.</strong> <%= @lesson.name %></h3>
-  <div class="row">
-  <div class="col-xs-6">
-  <p>
-    <span class="badge badge-info"><%= @lesson.tag %></span>
-  </p>
-  <p>
-    <strong>Category:</strong>
-    <%= @lesson.category %> <%= @lesson.tool %>
-  </p>
-  <p>
-    <strong>Description:</strong>
-    <%= @lesson.description %>
-  </p>
-  <p>
-    <strong>Source:</strong>
-    <%= link_to "#{@lesson.source}", target: :_blank do %>
-    <%= @lesson.source %>
-    <% end %>
-  </p>
-  <%= link_to 'Modifier', edit_lesson_path(@lesson), class:"btn btn-info" %> |
   <%= link_to 'Retour à l index', lessons_path, class:"btn btn-info" %> |
+  <%= link_to 'Modifier', edit_lesson_path(@lesson), class:"btn btn-info" %>
   <%= link_to 'Supprimer', @lesson, class:"btn btn-info", method: :delete, data: { confirm: 'Are you sure?' } %>
-  </div>
-   <div class="col-xs-6">
-
-
-
-   </div>
-  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-xs-6">
+      <p>
+        <% @lesson.labels.each do |label| %>
+        <span class="badge badge-info"><%= label.name %></span>
+        <% end %>
+        </p>
+      <p>
+        <strong>Category:</strong>
+        <%= @lesson.category %><br>
+        <strong>Framework:</strong>
+        <%= @lesson.tool %>
+      </p>
+      <p>
+        <strong>Description:</strong>
+        <%= @lesson.description %>
+      </p>
+      <p>
+        <strong>Source:</strong>
+        <%= link_to "#{@lesson.source}", target: :_blank do %>
+        <%= @lesson.source %>
+        <% end %>
+      </div>
+      <div class="col-xs-6">
+       <div class="box-shadow">
+        <strong><%= @lesson.code %></strong>
+      </div>
+    </div>
+  </p>
+</div>
 </div>

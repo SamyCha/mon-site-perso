@@ -4,7 +4,9 @@
   <% @lessons.each do |lesson| %>
   <strong><%= lesson.reference %>.</strong><%= lesson.name %> <span class="badge badge-info"><%= lesson.tag %></span>
   <%= link_to 'Voir', lesson %>
-<br>
-<% end %><br><br>
-<%= link_to 'Ajouter une leçon', new_lesson_path, class:"btn btn-info" %>
+  <br>
+  <% end %>
+  <br>
+  <br>
+  <%= link_to 'Ajouter une leçon', new_lesson_path, class:"btn btn-info" %>
 </div>
