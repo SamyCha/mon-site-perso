@@ -1,0 +1,4 @@
+En générale on utilise des clefs API en environnement de développement qui peuvent être dans le code. Dans ce cas on utilise la gem figaro et le fichier application.yml pour y cacher ses clefs.
+Depuis la console, pour l’utilisation de l’API Facebook par exemple on peut faire
+> heroku config:set APP_ID=****** APP_SECRET=*** pour pousser les clefs apis de prod sur notre site en prod ou les mettre directement sur la plateforme heroku.
+EN générale se réfèrer à l’install Github de la gem qui explique les clefs API à pousser.

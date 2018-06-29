@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>2. Mettre un projet rails en production sur Heroku</h3>
+  <div class="col-xs-12 col-md-8">
+    S’assurer de faire ça en entant sur le master de git (et d’avoir heroku d’istallé sur sa machine):<br>
+    <strong> heroku login</strong> #(samychalakani@hotmail.com / Golfy2018)<br>
+    <strong> heroku create YOUR_APP_NAME --region eu</strong><br>
+    <strong> git remote -v </strong># pour voir tous ces remotes (heroku et Github)<br>
+    <strong> git push heroku master</strong> # pour déployer sur Heroku<br>
+    <strong> heroku run rails db:migrate</strong><br>
+    Puis aller dans confi/environment/production et saisir l’url heroku dans:<br>
+    <h6>config.action_mailer.default_url_options = { host: "XXXXXXX" }</h6>
+    S’il y a des problèmes sur la prod, faire la commande:<br>
+    <strong> heroku logs —tail </strong>#pour voir les derniers logs<br>
+    <strong> heroku restart </strong>#pour relancer une fois le problème corrigé<br>
+    <strong> heroku run rails c </strong>#pour travailler en console heroku (en prod directement)
+  </div>
+  <div class="col-xs-12 col-md-4">
+  </div>
+</div>

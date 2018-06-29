@@ -1,0 +1,19 @@
+<div class="container">
+  <h3>Creer ses premières pages</h3>
+  <div class="col-xs-12 col-md-5">
+    En général, on commence par faire sa home et les pages volantes liées au PagesController et qui ne nécessitent pas de Model ou de nouveau controller.
+    Suivant l’installation, on créer un premier controller pour la home, la route étant aussi déjà crée avec cette commande:
+    > rails g controller pages home
+    Dans route.rb on opte pour que la home soit notre localhost:3000 (page d’accueil):
+    root ‘pages#home’
+    On fait tourner un serveur en local pour tester:
+    > rails s
+    Puis mettre les autorisations d’accès aux pages dans le Pagecontroller s’il y a utilisation de devise et que l’on a crée plusieurs pages dans le PageController:
+    skip_before_action :authenticate_user!, only: %i[home search contact qui devenir_vendeuse concept conditions]
+    En générale, commencer par les controller et les views:  Il n’y a pas besoin de créer de model s’il n’y a pas de datas qui sont utilisées.
+    Dans ce cas le controller et la View suffisent.
+    Une View est toujours liée à un controller et dispose d’une route.
+    <div class="col-xs-12 col-md-7">
+    </div>
+  </div>
+</div>

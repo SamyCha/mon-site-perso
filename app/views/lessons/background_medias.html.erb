@@ -1,0 +1,32 @@
+
+Un ensemble d’images Free sont disponibles sur:
+https://unsplash.com/?ref=thestocks.im
+Si l’on souhaite une image statique:
+/* app/assets/stylesheets/components/_banner.scss */
+.home-banner {
+  background-image: asset-url(‘image.jpg’);
+  background-size: cover;
+  height: 100vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 40vh;
+}
+Et on appelle le component CSS:
+/* app/assets/stylesheets/components/_index.scss */
+@import "banner";
+
+Si l’on souhaite une image avec scroll:
+On crée un component CSS:
+//background image home
+.jumbotron {
+  background-image: url('background2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 70vh;
+  color: #374344;
+}
+section {
+  padding-top: 4rem;
+}
+Et on appelle la classe ou la section dans le html.

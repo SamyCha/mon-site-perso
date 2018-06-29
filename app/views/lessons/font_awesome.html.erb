@@ -1,0 +1,11 @@
+With Font Awesome 5.x you now need to select what style of icon you want to use. Font Awesome 5.x has 3 styles:
+  • solid (fas)
+  • regular (far)
+  • brands (fab)
+In your view:
+icon('fas', 'flag')
+# => <i class="fas fa-flag"></i>
+icon('far', 'address-book', class: 'strong')
+# => <i class="far fa-address-book strong"></i>
+icon('fab', 'font-awesome', 'Font Awesome', id: 'my-icon', class: 'strong')
+# => <i id="my-icon" class="fab fa-font-awesome strong"></i> Font Awesome

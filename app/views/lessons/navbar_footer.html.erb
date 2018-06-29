@@ -1,0 +1,54 @@
+<div class="container">
+  <h3>Navbar et Footer</h3>
+  <div class="col-xs-12 col-md-5">
+    Ces 2 éléments sont dejà présents si l’installation a été faite avec install devise.
+    Sinon, je crée un dossier shared dans app/views, dans lequel je vais y mettre toutes mes partielles:
+    _navbar.html.erb
+    _footer.html.erb
+    et je copie et colle le html de la navbar et le css depuis l’url:
+    https://github.com/lewagon/awesome-navbars/blob/master/templates/_navbar_wagon.html.erb
+
+<h3>Pour mettre en place un navbar fixe et ransparente:</h4>
+    Pour faire celà, juste rajouter la classe: navbar-fixed-top navbar-wagon-white a la navbar
+    div class=navbar-wagon navbar-fixed-top navbar-wagon-white
+    On la rend transparente  en ajoutant dans le comprennent css de la navbar:
+    .navbar-wagon {
+    // [...]
+    background-color: transparent;
+    On ajoute en dessous:
+    transition: 0.5s background-color ease;
+  }
+  On change la couleur des liens (en blanc) de la navbar:
+  .navbar-wagon-link {
+  color : white
+  On enlève le shadow de la petite ligne qui traine:
+  .navbar-wagon{
+  box-shadow: 0 1px 5px  0 rgba(…..
+  On ajoute une autre classe css dans _navabar:
+  .navbar-wagon-white {
+  background-color: white;
+}
+Puis le javascript pour faire fonctionner celà:
+Je crée un component: navbar.js dans app/javascript/components/navbar.js :
+function initUpdateNavbarOnScroll() {
+const navbar = document.querySelector('.navbar-wagon');
+window.addEventListener('scroll', () => {
+if (window.scrollY >= window.innerHeight) {
+navbar.classList.add('navbar-wagon-white');
+} else {
+navbar.classList.remove('navbar-wagon-white');
+}
+});
+}
+
+export { initUpdateNavbarOnScroll };
+
+Et dans // app/javascript/packs/application.js j’importe la fonction pour l’appeler:
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
+
+Pour qu’elle devienne transparente au scroll, on doit faire du javascript (demo https://kitt.lewagon.com/knowledge/lectures/05-Rails%2F04-Rails-mister-cocktail#video à 01:05)
+</div>
+<div class="col-xs-12 col-md-7">
+</div>
+</div>

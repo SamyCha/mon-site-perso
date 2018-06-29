@@ -1,0 +1,33 @@
+<div class="container">
+  <h3>1. Démarrer un projet rails</h3>
+<div class="col-xs-12 col-md-5">
+Pour démarrer un nouveau projet rails, sous Mac, se placer dans le terminal et lancer la commande: <strong>rails new nom_app --database=postgresql </strong><br><br>
+  Ou bien choisir l’installation avec le template du wagon et devise déjà installés:<br>
+  <strong> rails new \  --database postgresql \  --webpack \  -m https://raw.githubusercontent.com/lewagon/rails-templates/master/devise.rb \  nom_app </strong><br><br>
+  Ne pas oublier le flag -T postresqul si on a l’intention de faire un déploiement ensuite!<br><br>
+  <strong> cd nom app </strong>#se mettre dans son app.<br>
+  <strong> stt </strong> #on ouvre Sublime Texte<br>
+  <strong> rails db:create </strong>#on crée le schéma vide (l’app a besoin de ça)<br>
+  <strong> git add . </strong><br>
+    <strong> git commit -m « Initial commit» </strong># ou git init pour le 1er commit<br>
+    <strong> hub create </strong># ça nous crée la remote<br>
+    <strong> git remote -v </strong>#on vérifie le fetch et le push<br>
+    <strong> git push origin master </strong><br>
+    <strong> hub browse </strong># pour aller voir son repo sur GitHub<br>
+
+    <strong> rails generate controller pages home </strong>#si choix de l’installation sans le template wagon<br>
+    <strong> rake db:migrate </strong><br>
+    Aller dans routes.rb:
+    <h6>root ‘pages#home’</h6><br>
+
+    Si l'installation est faite avec webpack, commenter la ligne suivante dans le layout pour que ça tourne en local:<br>
+  <h6>javascript_pack_tag 'application'</h6>
+    <strong> rails s </strong><br>
+    <strong> git add . </strong><br>
+    <strong> git commit -m « Prepare for heroku» </strong><br>
+    Puis passer au déploiement Ajouter si nécessaire (devise/ stylsheets du wagon/ components UI du wagon…)
+</div>
+<div class="col-xs-12 col-md-7">
+
+</div>
+</div>

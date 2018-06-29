@@ -1,0 +1,26 @@
+<div class="container">
+  <h3>2. Mettre un projet rails en production sur Heroku</h3>
+  <div class="col-xs-12 col-md-8">
+    On commence désormais les features de notre projet  à partir de nouvelles branches.
+    Dés que l’on travaille sur une nouvelle feature, le mieux est de créer une nouvelle branche:
+    > git checkout -b nom-de-la-branche : pour préer une branche à partir du master:
+    Puis on enregistre au fur et à mesure notre travail lorsqu’une feature est terminée:
+    > git status
+    > git add .
+    > git commit -m ‘descriptif de la modif’
+    > git push origin nom-de-la-branche
+    On va sur Github/ code:
+    On valide le commit
+    On merge le commit
+    On revient sur la console pour revenir sur un projet propre qui a enregistré notre dernière feature avec:
+    > git checkout master
+    > git pull origin master
+    On pousse sur heroku:
+    > git push heroku master
+    S’il y a eu une migration au cours de notre commit:
+    > heroku run rake db:migrate
+    On re-créer une nouvelle branche….et ainsi de suite
+    <div class="col-xs-12 col-md-4">
+    </div>
+  </div>
+</div>
