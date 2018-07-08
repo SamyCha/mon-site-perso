@@ -1,39 +1,65 @@
+<section class="background">
 <p id="notice"><%= notice %></p>
-
+  <div class="container">
+    <div class="panel panel-default box-shadow">
+      <div class="panel-body">
+        <div class="row">
+         <div class="col-md-6">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1465670277367-f9c604766898?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=844e76eabeeb23c17ce07467ea424061&auto=format&fit=crop&w=1738&q=80');"></div>CARROUSSEL
+         </div>
+         <div class="col-md-6">
+<hr>
 <div class="container">
-  <h3><strong><%= @lesson.reference %>.</strong> <%= @lesson.name %></h3>
-  <%= link_to 'Retour à l index', lessons_path, class:"btn btn-info" %> |
-  <%= link_to 'Modifier', edit_lesson_path(@lesson), class:"btn btn-info" %>
-  <%= link_to 'Supprimer', @lesson, class:"btn btn-info", method: :delete, data: { confirm: 'Are you sure?' } %>
-  <br><br>
   <div class="row">
-    <div class="col-xs-6">
-      <p>
-        <% @lesson.labels.each do |label| %>
-        <span class="badge badge-info"><%= label.name %></span>
-        <% end %>
-        </p>
-      <p>
-        <strong>Category:</strong>
-        <%= @lesson.category %><br>
-        <strong>Framework:</strong>
-        <%= @lesson.tool %>
-      </p>
-      <p>
-        <strong>Description:</strong>
-        <%= @lesson.description %>
-      </p>
-      <p>
-        <strong>Source:</strong>
-        <%= link_to "#{@lesson.source}", target: :_blank do %>
-        <%= @lesson.source %>
-        <% end %>
-      </div>
-      <div class="col-xs-6">
-       <div class="box-shadow">
-        <strong><%= @lesson.code %></strong>
-      </div>
+   <%= image_tag "vigiers.png", class:"card-user" %>
+    <div class="col-md-6 text-left">
+      <h3><%= @lesson.name %></h3>
+      <h5><%= @lesson.code%></h5>
+
+      <%= image_tag "logo.png", heigth:10, width: 20 %>:
+      <%= @lesson.name %><br>
+      <%= image_tag "logo.png", heigth:10, width: 20 %>:
+      <%= @lesson.name %><br>
+      <%= image_tag "logo.png", heigth:10, width: 20 %>:
+     from: <%= @lesson.tag %><br>
+      <i class="fa fa-female fa" aria-hidden="true"></i>: <%= @lesson.name %>
     </div>
-  </p>
+    <div class="col-md-6 ">
+IMAGE
+    <br>
+<div class="row">
+  <div class="col-md-12">
+    <div id="map"></div>
+    <style>
+      #map {
+        height: 160px;
+        width: 100%;
+      }</style>
+      <script>function initMap() {
+        var uluru = {lat: <%= @lesson.latitude %>, lng: <%= @lesson.longitude %>};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 15,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgkkYGH99wJ7N-wb_J6HcjTvu9KK-ZFiU&callback=initMap"></script>
+  </div>
+</div>
+  </div>
 </div>
 </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</section>
+
+

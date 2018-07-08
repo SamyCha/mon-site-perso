@@ -1,49 +1,28 @@
-<p id="notice"><%= notice %></p>
-<div class="container-fluid">
-<div class="col-xs-4">
-  <h3><strong>Back-end Rails</strong></h3>
-  <h4>Back-end</h4>
-  1. <%= link_to "Nouveau projet", demarrer_path %> <span class="label label-success">rails</span>
-  <br>
-  2. <%= link_to "Premières pages", premieres_pages_path %> <span class="label label-success">rails</span> <span class="label label-success">create</span>
-  <br>
-  3. <%= link_to "Créer un formulaire", creer_formulaire_path %> <span class="label label-success">rails</span> <span class="label label-success">create</span>
+<section class="background">
+  <p id="notice"><%= notice %></p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class='col-xs-12 col-sm-8'>
+        <% @lessons.each do |lesson| %>
+        <%= link_to lesson do %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1465670277367-f9c604766898?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=844e76eabeeb23c17ce07467ea424061&auto=format&fit=crop&w=1738&q=80');">
+          <div class="card-category"><%= lesson.code%></div>
+          <div class="card-description">
+            <h2><%= lesson.name %></h2>
+            <p>from <%= lesson.tag %></p>
+          </div>
+          <%= image_tag "vigiers.png", class:"card-user" %>
+          <div class="card-link">
+          </div>
+        </div>
+        <br>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="col-sm-4">
+        <div id="map" style="width: 100%; height: 700px;" data-markers="<%= @markers.to_json %>"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <h4>Github</h4>
-  1. <%= link_to "Branches sur Github", creer_des_branches_path%> <span class="label label-success">github</span>
-  <br>
-  2. <%= link_to "Cloner son repo", cloner_repo_path %> <span class="label label-success">github</span></p>
-</div>
-<div class="col-xs-4">
-<h3><strong>Front-end Javascript React</strong></h3>
-  <h4>Front-end</h4>
-  1. <%= link_to "Navbar et footer", navbar_footer_path %> <span class="label label-success">components</span>
-  <br>
-  2. <%= link_to "Layout", layout_path %> <span class="label label-success">template</span>
-  <br>
-  3. <%= link_to "Image/Vidéo en background", background_medias_path %> <span class="label label-success">template</span>
-   <br>
-  3. <%= link_to "Ajouter des icônes Font Aweseome", font_awesome_path %> <span class="label label-success">template</span>
-</div>
-<div class="col-xs-4">
-<h3><strong>Production Heroku</strong></h3>
-  <h4>Production</h4>
-  1. <%= link_to "Mise en production", production_path %> <span class="label label-success">heroku</span>
-  <br>
-  2. <%= link_to "gem figaro et clefs API", clefs_figaro_path %> <span class="label label-success">API</span> <span class="label label-success">sécurité</span>
-</div>
-</div>
-<!--
-  Autres lessons:
-  <% @lessons.each do |lesson| %>
-  <strong><%= lesson.reference %>.</strong><%= lesson.name %>
-  <% lesson.labels.each do |label| %>
-  <span class="badge badge-info"><%= label.name %></span>
-  <% end %>
-  <%= link_to 'Voir', lesson %>
-  <br>
-  <% end %>
-  <br>
-  <br>
-  <%= link_to 'Ajouter une leçon', new_lesson_path, class:"btn btn-info" %>
--->

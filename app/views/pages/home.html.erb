@@ -1,70 +1,110 @@
 <section class="background">
-
   <div class="container">
     <div class="row">
-      <div class="col-xs-1"></div>
-      <div class="col-xs-5">
-        <h2><strong>SamyCha</strong></h2>
-        <h4><strong>Full Stack Developper</strong></h4>
-        <p>Pour des sites web dynamiques et responsives</p>
-        <%= image_tag "rails.png", width:120 %> <%= image_tag "javascript.png", width:70 %> <%= image_tag "bootstrap.png", width:80 %> <%= image_tag "heroku.png", width:80 %> <%= image_tag "postgresql.png", width:70 %>
+      <div class="col-xs-12 col-md-1"></div>
+      <div class="col-xs-12 col-md-5">
+        <h2><strong>Golf Rental Properties</strong></h2>
+        <h4><strong>Find your next golf course accomodation</strong></h4>
+        <p>Discover the best places for your golf stay </p>
+        <%= image_tag "vigiers.png", width:60 %> <%= image_tag "westin.png", width:60 %> <%= image_tag "logo_royan.png", width:60 %>
       </div>
+      <div class="col-xs-12 col-md-3"></div>
+      <div class=" col-xs-12 col-md-3">
+        <div id="hidden-mobile">
+          <div class="box-shadow">
+           <section>
+            <h5 style="color:white;"><%= image_tag "phone.png", width: 35 %> <strong>Contact us </strong></h5>
+            <h5>(+33) (0)6 81 503710 <br>
+              join@golfrental.com</h5>
+              <hr>
+              <strong> <%= link_to  mon_fonctionnement_path do %>
+                <%= image_tag "white_house.png", heigth:35, width: 25 %>  Plan to rent your house</strong>
+                <% end %>
+                <br><br>
+              </strong>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center" >
+       <div id="hidden-desktop">`<br><br><br><br><br><br><br>
+        <%= link_to "Discover all our properties", lessons_path, class:'btn btn-primary' %>
+      </div>
+      <div class="col-xs-12 arrow">
+        <div id="hidden-mobile">
+          <%= link_to "/#creators" do %>
+          <h5><strong>Discover our last properties</strong><h5><br>
+            <%= image_tag "arrow_down.png", width: 45 %>
+            <% end %>
+          </div>
+        </h5>
+      </div>
+    </section>
+    <br>
+    <div class="container">
+      <div id='creators'>
+        <div class='text-center'>
+          <h4><strong>Fantastic properties located on the golf course</strong></h4><br>
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1465670277367-f9c604766898?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=844e76eabeeb23c17ce07467ea424061&auto=format&fit=crop&w=1738&q=80');">
+              <div class="card-category">Chateau des Vigiers</div>
+              <div class="card-description">
+                <h2>Sweet Condo 4 pers</h2>
+                <p>from 90eur/night</p>
+              </div>
+              <%= image_tag "vigiers.png", class:"card-user" %>
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1522362299427-cf74c685a60c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a24de15e02e769f7a71ce5c1ad80804b&auto=format&fit=crop&w=1500&q=80');">
+              <div class="card-category">Golf de Royan</div>
+              <div class="card-description">
+                <h2>Nice Villa 6 pers</h2>
+                <p>from 120eur/night</p>
+              </div>
+              <%= image_tag "westin.png", class:"card-user" %>
+              <a class="card-link" href="#" ></a>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1503525635880-11dd8ee741a4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ea1e92650d20f00f19ea4ead55df2c70&auto=format&fit=crop&w=1762&q=80');">
+            <div class="card-category">Golf de Biscarosse</div>
+            <div class="card-description">
+              <h2>Nice Villa 6 pers</h2>
+              <p>from 100eur/night</p>
+            </div>
+            <%= image_tag "westin.png", class:"card-user" %>
+            <a class="card-link" href="#" ></a>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12 text-right">
+          <%= link_to "Discover all our properties", lessons_path %>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row" >
+     <div class="col-xs-4 text-center">
+       <%= image_tag "house.png", width:80 %><br>
+       Get the best accomadation and location places to discover surrounding as well
+     </div>
+     <div class="col-xs-4 text-center">
+       <%= image_tag "club_car.png", width:80 %><br>
+       Access to golf and accomodation services from your place
+     </div>
+     <div class="col-xs-4 text-center">
+      <%= image_tag "course.png", width:80 %><br>
+      Easiest way to participate to the golf competiton with no stress.<br> <%= link_to 'Have a look at our Golf Courses Partners', mon_fonctionnement_path %>
+    </div>
+  </div>
+</div>
 
-    <div class="col-xs-6">
-      <div class="footer-links">
-    <a href="#"><i class="fa fa-github"></i></a>
-    <a href="#"><i class="fa fa-instagram"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-  </div>
-   </div>
-  </div>
-  </div>
-</section>
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <h4><strong>Mes dernières réalisations:</strong></h4>
-    </div>
-    <div class="row">
-      <div class="col-xs-4 text-center">
-        <%= image_tag "my_clean_car.png", width:100 %><br>
-        <strong>My Clean Car</strong><br>
-        Web App
-      </div>
-      <div class="col-xs-4 text-center">
-        <%= image_tag "les_armoires.jpg", width:350 %><br>
-        <strong>Les armoires de Paris</strong><br>
-        Market Place
-      </div>
-      <div class="col-xs-4 text-center">
-        <%= image_tag "project_me.png", width:320 %><br>
-        <strong>Project Me</strong><br>
-        Product Platform
-      </div>
-    </div>
-  </div>
-</div>
-<hr>
-<div class="row background-purple">
-  <div class="col-xs-12 text-center">
-   <h4><strong>Fonctionnalités:</h4><strong>
- </div>
- <div class="col-xs-6 text-center">
-  <ul>Fiche Produit
-    <li>Profil utilisateur</li>
-    <li>Gestion des différents utilisateurs</li>
-    <li>Panneau d'administration</li>
-    <li>Commentaires</li>
-  </ul>
-</div>
-<div class="col-xs-6 text-center">
-  <ul>
-    <li>Rapprochement géographique</li>
-    <li>Messagerie utilisateur</li>
-    <li>Intégration d'API</li>
-    <li>Paiement en ligne</li>
-    <li>Suivi analytics</li>
-  </ul>
-</div>
-</div>
 

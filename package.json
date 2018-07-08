@@ -2,8 +2,9 @@
   "name": "mon-site-perso",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "^3.3.1",
+    "@rails/webpacker": "^3.5.3",
     "bootstrap": "3",
+    "gmaps": "^0.4.24",
     "jquery": "^3.3.1"
   },
   "devDependencies": {

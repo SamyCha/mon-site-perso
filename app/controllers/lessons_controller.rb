@@ -1,11 +1,19 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: %i[show index]
 
   # GET /lessons
   # GET /lessons.json
   def index
     @lessons = Lesson.all
+
+      @markers = @lessons.map do |lesson|
+    {
+      lat: lesson.latitude,
+        lng: lesson.longitude#,
+      #   infoWindow: { content: render_to_string(partial: "/lessons/map_box", locals: { lesson: lesson }) }
+      }
+    end
   end
 
   # GET /lessons/1
@@ -70,6 +78,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:name, :category, :tool, :description, :tag, :source, :reference, :code, {label_ids: []})
+      params.require(:lesson).permit(:name, :category, :tool, :description, :tag, :source, :reference, :code, :address, {label_ids: []})
     end
 end

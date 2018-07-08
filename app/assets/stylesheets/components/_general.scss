@@ -1,41 +1,51 @@
 .box-shadow {
   width: 0,5em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  background-color: #3c6382;
-  opacity:0.9;
+  background-color: #2f4f1e;
+  opacity:0.75;
+  border-radius: 6%;
   text-align: center;
-   color: black;
+  color: black;
   .h1, h2, h3, h4, h5 {
-     color: white;
-  }
+   color: white;
+ }
 }
 
 // Homepage bakground image
 .background  {
-  background-image: url('background.jpg');
+  background-image: url('background2.jpg');
   //background-color: grey;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  min-height: 50vh;
+  min-height: 100vh;
   color: purple;
 }
 
 section {
-padding-top: 4rem;
+  padding-top: 4rem;
 
 }
 
 ul{
-     list-style:none;
+ list-style:none;
 }
 
 .background-purple  {
-background-color: #c13ae0;
-opacity: 0.8;
-color: black;
+  background-color: #c13ae0;
+  opacity: 0.8;
+  color: black;
 }
 
 h6 {
   color: blue;
+}
+
+.arrow {
+padding-top: 260px;
+}
+
+h5 {
+  color: white;
+  font-size: 20px;
 }
