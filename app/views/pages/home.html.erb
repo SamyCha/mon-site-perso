@@ -43,6 +43,35 @@
     <br>
     <div class="container">
       <div id='creators'>
+        <div class="row">
+          <div class='col-xs-6'>
+            <% @lessons.each do |lesson| %>
+            <%= link_to lesson do %>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1465670277367-f9c604766898?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=844e76eabeeb23c17ce07467ea424061&auto=format&fit=crop&w=1738&q=80');">
+              <div class="card-category"><%= lesson.code%></div>
+              <div class="card-description">
+                <h2><%= lesson.name %></h2>
+                <p>from <%= lesson.tag %></p>
+              </div>
+              <%= image_tag "vigiers.png", class:"card-user" %>
+              <div class="card-link">
+              </div>
+            </div>
+            <br>
+            <% end %>
+            <% end %>
+          </div>
+          <div class='col-xs-6'>
+            <div class="box-shadow"><%= image_tag "house.png", width:80 %><br>
+            <h5>Get the best accomadation and location places to discover surrounding as well</h5>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+   <hr>
+
+<!--
         <div class='text-center'>
           <h4><strong>Fantastic properties located on the golf course</strong></h4><br>
         </div>
@@ -90,21 +119,24 @@
       <hr>
     </div>
   </div>
-  <div class="container">
-    <div class="row" >
-     <div class="col-xs-4 text-center">
-       <%= image_tag "house.png", width:80 %><br>
-       Get the best accomadation and location places to discover surrounding as well
-     </div>
-     <div class="col-xs-4 text-center">
-       <%= image_tag "club_car.png", width:80 %><br>
-       Access to golf and accomodation services from your place
-     </div>
-     <div class="col-xs-4 text-center">
-      <%= image_tag "course.png", width:80 %><br>
-      Easiest way to participate to the golf competiton with no stress.<br> <%= link_to 'Have a look at our Golf Courses Partners', mon_fonctionnement_path %>
-    </div>
+-->
+<div class="container">
+  <div class="row" >
+   <div class="col-xs-4 text-center">
+     <%= image_tag "house.png", width:80 %><br>
+     Get the best accomadation and location places to discover surrounding as well
+   </div>
+   <div class="col-xs-4 text-center">
+     <%= image_tag "club_car.png", width:80 %><br>
+     Access to golf and accomodation services from your place
+   </div>
+   <div class="col-xs-4 text-center">
+    <%= image_tag "course.png", width:80 %><br>
+    Easiest way to participate to the golf competiton with no stress.<br> <%= link_to 'Have a look at our Golf Courses Partners', mon_fonctionnement_path %>
   </div>
+
+
+</div>
 </div>
 
 

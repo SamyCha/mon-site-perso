@@ -4,28 +4,48 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
+ <!--
     <%= f.label :category %>
     <%= f.select :category, ["Back-end", "Front-end", "Deploiement", "Base de données", "Tests", "Template"], prompt: "A sélectionner..." %><br>
-    <%= f.label :tool %>
-    <%= f.select :tool, ["rails", "html", "css", "javascript", "PostGrSQL"], prompt: "A sélectionner..."  %><br>
-    <label>Ajouter des Tags à votre lesson (max 8)</label>
-    <% for label in Label.all %>
-    <div>
-    <p><%= check_box_tag "lesson[label_ids][]", label.id, @lesson.labels.include?(label) %>
-        <%= label.name %></p>
-      </div>
-      <% end %><br>
-      <%= f.label :description %>
-      <%= f.text_area :description, rows:4, cols:125, placeholder: "Description ici" %>
-      <%= f.label :code %>
-      <%= f.text_area :code, rows:4, cols:125, placeholder: "Code ici" %>
-      <%= f.input :tag %>
-      <%= f.input :source %>
-      <%= f.input :reference %>
-    </div>
+  -->
+  <%= f.label :superficie %>
+  <%= f.number_field :size  %><br>
+  <%= f.label :description %>
+  <%= f.text_area :description, rows:4, cols:125, placeholder: "Description ici" %><br>
+  <%= f.label :chambres %>
+  <%= f.number_field :rooms %><br>
+  <%= f.label :couchage %>
+  <%= f.number_field :sleep %><br>
+  <%= f.label :salle_de_bain %>
+  <%= f.number_field :bathroom %><br>
+  <%= f.label :prix_de_depart %>
+  <%= f.number_field :minimum_price %><br>
+  <%= f.label :durée_minimale %>
+  <%= f.number_field :minimum_stay %><br>
+  <%= f.label :personnes_maximum %>
+  <%= f.number_field :maximum_person %><br>
+  <%= f.label :depot_garantie %>
+  <%= f.number_field :deposit_garantee %><br>
+  <%= f.label :frais_nettoyage %>
+  <%= f.number_field :cleaning %><br>
+  <%= f.label :parking %>
+  <%= f.select :parking_area, ["yes outside", "yes inside", "no"], prompt: "Select..." %><br>
+  <%= f.label :piscine %>
+  <%= f.select :swiming_pool, ["yes", "no"], prompt: "Select..." %><br>
+  <%= f.label :air_conditionne %>
+  <%= f.select :air_conditioning, ["yes", "no"], prompt: "Select..." %><br>
+  <%= f.label :acces_internet %>
+  <%= f.select :internet_acces, ["yes", "no"], prompt: "Select..." %><br>
+  <%= f.label :fumeur %>
+  <%= f.select :smoking, ["accepted", "not accepted"], prompt: "Select..." %><br>
+  <%= f.label :lien_annonce_abritel %>
+  <%= f.text_field :homeaway_link, placeholder: "wwww.xxx.heroku-app.com", class: "form-control" %>
 
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
-    <% end %>
-  </div>
+  <hr>
+</div>
+
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
+<% end %>
+</div>

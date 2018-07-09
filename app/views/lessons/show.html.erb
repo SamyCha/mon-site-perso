@@ -1,65 +1,84 @@
 <section class="background">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
   <div class="container">
     <div class="panel panel-default box-shadow">
       <div class="panel-body">
         <div class="row">
          <div class="col-md-6">
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1465670277367-f9c604766898?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=844e76eabeeb23c17ce07467ea424061&auto=format&fit=crop&w=1738&q=80');"></div>CARROUSSEL
-         </div>
-         <div class="col-md-6">
-<hr>
-<div class="container">
-  <div class="row">
-   <%= image_tag "vigiers.png", class:"card-user" %>
-    <div class="col-md-6 text-left">
-      <h3><%= @lesson.name %></h3>
-      <h5><%= @lesson.code%></h5>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1465670277367-f9c604766898?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=844e76eabeeb23c17ce07467ea424061&auto=format&fit=crop&w=1738&q=80');"></div>
 
-      <%= image_tag "logo.png", heigth:10, width: 20 %>:
-      <%= @lesson.name %><br>
-      <%= image_tag "logo.png", heigth:10, width: 20 %>:
-      <%= @lesson.name %><br>
-      <%= image_tag "logo.png", heigth:10, width: 20 %>:
-     from: <%= @lesson.tag %><br>
-      <i class="fa fa-female fa" aria-hidden="true"></i>: <%= @lesson.name %>
-    </div>
-    <div class="col-md-6 ">
-IMAGE
-    <br>
-<div class="row">
-  <div class="col-md-12">
-    <div id="map"></div>
-    <style>
-      #map {
-        height: 160px;
-        width: 100%;
-      }</style>
-      <script>function initMap() {
-        var uluru = {lat: <%= @lesson.latitude %>, lng: <%= @lesson.longitude %>};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgkkYGH99wJ7N-wb_J6HcjTvu9KK-ZFiU&callback=initMap"></script>
-  </div>
+
+
+<table style="width:80%">
+  <tr>
+    <th><h6><strong>Period</strong></h6></th>
+    <th><h6><strong>Price per night  (minimum <%= @lesson.minimum_stay %>)</strong></h6></th>
+  </tr>
+  <tr>
+    <td><h6>2018 Spring Prices</h6></td>
+    <td><h6><strong>100 eur</strong></h6></td>
+  </tr>
+  <tr>
+    <td><h6>2018 Summer Prices</h6></td>
+    <td><h6><strong>150 eur</strong></h6></td>
+  </tr>
+    <tr>
+    <td><h6>2018 Fall Prices</h6></td>
+    <td><h6><strong>100 eur</strong></h6></td>
+  </tr>
+    <tr>
+    <td><h6>2018 Winter Prices</h6></td>
+    <td><h6><strong>90 eur</strong></h6></td>
+  </tr>
+</table>
+<hr>
+<div class='text-center'>
+<h6><strong>Prices not including:</strong><br>
+- Cleaning: <strong><%= @lesson.cleaning %> eur per stay.</strong><br>
+- Stay taxes: 1eur/night/pers
+<br><br>
+<strong>Deposit Garantee: <%= @lesson.deposit_garantee %></strong>
+</h6>
 </div>
-  </div>
-</div>
-</div>
+
+        </div>
+        <div class="col-md-6">
+         <h3><%= @lesson.name %></h3>
+         <h4><%= @lesson.name %>
+         </h4>
+         <h5>from: <%= @lesson.minimum_price %> eur</h5>
+         <hr>
+         <div class="row">
+          <%= image_tag "vigiers.png", class:"card-user-large" %>
+          <h5><%= @lesson.description %></h5>
+          <div class="col-md-6 text-left">
+            <ul>
+              <li><h6>Rooms: <strong><%= @lesson.rooms %></strong></h6></li>
+              <li><h6>Bathroom: <strong><%= @lesson.bathroom %></strong></h6></li>
+              <li><h6>Max number of pers.: <strong><%= @lesson.maximum_person %></strong></h6></li>
+              <li><h6>Parking area: <strong><%= @lesson.parking_area %></strong></h6></li>
+            </ul>
+          </div>
+          <div class="col-md-6 text-left">
+            <ul>
+              <li><h6>Swiming Pool: <strong><%= @lesson.swiming_pool %></strong></h6></li>
+              <li><h6>Air Conditioning: <strong><%= @lesson.air_conditioning %></strong></h6></li>
+              <li><h6>Internet acces by Wifi: <strong><%= @lesson.internet_acces %></strong></h6></li>
+              <li><h6>Smoking: <strong><%= @lesson.smoking %></strong></h6></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <div class="text-center">
+          <h5><%= link_to 'Need more information', qui_path, class:'btn btn-info' %> or <%= link_to "#{@lesson.homeaway_link}", class:'btn btn-info', target: :_blank do %>  Book online with: <%= image_tag "abritel.png", width: 60 %><% end %></h5>
+
         </div>
       </div>
-
     </div>
   </div>
 </div>
-
+<div class='text-center'>
+  <h5> <%= link_to 'Back to Properties', lessons_path %> </h5>
+</div>
+</div>
 </section>
-
-
