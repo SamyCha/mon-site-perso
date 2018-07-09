@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180709141708) do
+ActiveRecord::Schema.define(version: 20180709145826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,11 @@ ActiveRecord::Schema.define(version: 20180709141708) do
     t.string "internet_acces"
     t.string "smoking"
     t.string "homeaway_link"
+    t.string "golf"
+    t.float "spring"
+    t.float "summer"
+    t.float "fall"
+    t.float "winter"
   end
 
   create_table "users", force: :cascade do |t|

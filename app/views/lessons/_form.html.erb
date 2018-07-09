@@ -4,48 +4,54 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
- <!--
-    <%= f.label :category %>
-    <%= f.select :category, ["Back-end", "Front-end", "Deploiement", "Base de données", "Tests", "Template"], prompt: "A sélectionner..." %><br>
-  -->
-  <%= f.label :superficie %>
-  <%= f.number_field :size  %><br>
-  <%= f.label :description %>
-  <%= f.text_area :description, rows:4, cols:125, placeholder: "Description ici" %><br>
-  <%= f.label :chambres %>
-  <%= f.number_field :rooms %><br>
-  <%= f.label :couchage %>
-  <%= f.number_field :sleep %><br>
-  <%= f.label :salle_de_bain %>
-  <%= f.number_field :bathroom %><br>
-  <%= f.label :prix_de_depart %>
-  <%= f.number_field :minimum_price %><br>
-  <%= f.label :durée_minimale %>
-  <%= f.number_field :minimum_stay %><br>
-  <%= f.label :personnes_maximum %>
-  <%= f.number_field :maximum_person %><br>
-  <%= f.label :depot_garantie %>
-  <%= f.number_field :deposit_garantee %><br>
-  <%= f.label :frais_nettoyage %>
-  <%= f.number_field :cleaning %><br>
-  <%= f.label :parking %>
-  <%= f.select :parking_area, ["yes outside", "yes inside", "no"], prompt: "Select..." %><br>
-  <%= f.label :piscine %>
-  <%= f.select :swiming_pool, ["yes", "no"], prompt: "Select..." %><br>
-  <%= f.label :air_conditionne %>
-  <%= f.select :air_conditioning, ["yes", "no"], prompt: "Select..." %><br>
-  <%= f.label :acces_internet %>
-  <%= f.select :internet_acces, ["yes", "no"], prompt: "Select..." %><br>
-  <%= f.label :fumeur %>
-  <%= f.select :smoking, ["accepted", "not accepted"], prompt: "Select..." %><br>
-  <%= f.label :lien_annonce_abritel %>
-  <%= f.text_field :homeaway_link, placeholder: "wwww.xxx.heroku-app.com", class: "form-control" %>
+    <%= f.label :golf %>
+    <%= f.select :golf, ["Golf des Vigiers", "Golf de Saint-Emilion", "Golf de Cameyrac", "Golf de Marmandes", "Golf du Medoc", "Golf Bordelais"], prompt: "A sélectionner..." %><br>
+    <%= f.label :superficie %>
+    <%= f.number_field :size  %><br>
+    <%= f.label :description %>
+    <%= f.text_area :description, rows:4, cols:125, placeholder: "Description ici" %><br>
+    <%= f.label :chambres %>
+    <%= f.number_field :rooms %><br>
+    <%= f.label :couchage %>
+    <%= f.number_field :sleep %><br>
+    <%= f.label :salle_de_bain %>
+    <%= f.number_field :bathroom %><br>
+    <%= f.label :prix_de_depart %>
+    <%= f.number_field :minimum_price %><br>
+    <%= f.label :durée_minimale %>
+    <%= f.number_field :minimum_stay %><br>
+    <%= f.label :personnes_maximum %>
+    <%= f.number_field :maximum_person %><br>
+    <%= f.label :depot_garantie %>
+    <%= f.number_field :deposit_garantee %><br>
+    <%= f.label :frais_nettoyage %>
+    <%= f.number_field :cleaning %><br>
+    <%= f.label :parking %>
+    <%= f.select :parking_area, ["yes outside", "yes inside", "no"], prompt: "Select..." %><br>
+    <%= f.label :piscine %>
+    <%= f.select :swiming_pool, ["yes", "no"], prompt: "Select..." %><br>
+    <%= f.label :air_conditionne %>
+    <%= f.select :air_conditioning, ["yes", "no"], prompt: "Select..." %><br>
+    <%= f.label :acces_internet %>
+    <%= f.select :internet_acces, ["yes", "no"], prompt: "Select..." %><br>
+    <%= f.label :fumeur %>
+    <%= f.select :smoking, ["accepted", "not accepted"], prompt: "Select..." %><br>
+    <%= f.label :lien_annonce_abritel %>
+    <%= f.text_field :homeaway_link, placeholder: "wwww.xxx.heroku-app.com", class: "form-control" %><br>
+    <%= f.label :tarif_printemps %>
+    <%= f.number_field :spring %><br>
+    <%= f.label :tarif_ete %>
+    <%= f.number_field :summer %><br>
+    <%= f.label :tarif_automne %>
+    <%= f.number_field :fall %><br>
+    <%= f.label :tarif_hiver %>
+    <%= f.number_field :winter %><br>
 
-  <hr>
-</div>
+    <hr>
+  </div>
 
-<div class="form-actions">
-  <%= f.button :submit %>
-</div>
-<% end %>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+  <% end %>
 </div>

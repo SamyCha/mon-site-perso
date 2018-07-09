@@ -48,10 +48,10 @@
             <% @lessons.each do |lesson| %>
             <%= link_to lesson do %>
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1465670277367-f9c604766898?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=844e76eabeeb23c17ce07467ea424061&auto=format&fit=crop&w=1738&q=80');">
-              <div class="card-category"><%= lesson.code%></div>
+              <div class="card-category"><%= lesson.golf%></div>
               <div class="card-description">
                 <h2><%= lesson.name %></h2>
-                <p>from <%= lesson.tag %></p>
+                <p>from <%= lesson.minimum_price %> eur</p>
               </div>
               <%= image_tag "vigiers.png", class:"card-user" %>
               <div class="card-link">
