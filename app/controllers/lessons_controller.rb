@@ -78,6 +78,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:name, :description, :size, :sleep, :rooms, :bathroom, :minimum_stay, :address, :minimum_price, :maximum_person, :deposit_garantee, :cleaning, :parking_area, :swiming_pool, :air_conditioning, :internet_acces, :smoking, :homeaway_link, :golf, :spring, :summer, :fall, :winter)
+      params.require(:lesson).permit(:name, :description, :size, :sleep, :rooms, :bathroom, :minimum_stay, :address, :minimum_price, :maximum_person, :deposit_garantee, :cleaning, :parking_area, :swiming_pool, :air_conditioning, :internet_acces, :smoking, :homeaway_link, :golf, :spring, :summer, :fall, :winter, photos: [ ])
     end
 end

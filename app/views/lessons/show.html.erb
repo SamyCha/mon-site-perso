@@ -1,85 +1,121 @@
-<section class="background">
-  <p id="notice"><%= notice %></p>
+ <section class="background">
   <div class="container">
     <div class="panel panel-default box-shadow">
       <div class="panel-body">
         <div class="row">
          <div class="col-md-6">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1465670277367-f9c604766898?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=844e76eabeeb23c17ce07467ea424061&auto=format&fit=crop&w=1738&q=80');"></div>
 
+          <div id="my_carousel" class="carousel slide" data-ride="carousel">
+            <!-- Bulles -->
+            <ol class="carousel-indicators">
+              <li data-target="#my_carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#my_carousel" data-slide-to="1"></li>
+              <li data-target="#my_carousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Slides -->
+            <div class="carousel-inner">
+              <!-- Page 1 -->
+              <div class="item active">
+                <div class="carousel-page">
+                <%= cl_image_tag @lesson.photos.first.path, width: 400, height: 200, crop: :fill %>
 
+                </div>
+                <div class="carousel-caption">Séjour</div>
+              </div>
+              <!-- Page 2 -->
+              <div class="item">
+                <div class="carousel-page">
 
-<table style="width:80%">
-  <tr>
-    <th><h6><strong>Periods:</strong></h6></th>
-    <th><h6><strong>Prices:</strong></h6></th>
-  </tr>
-  <tr>
-    <td><h6>2018 Spring Prices</h6></td>
-    <td><h6><strong><%= @lesson.spring %> eur/night</strong></h6></td>
-  </tr>
-  <tr>
-    <td><h6>2018 Summer Prices</h6></td>
-    <td><h6><strong><%= @lesson.summer %> eur/night</strong></h6></td>
-  </tr>
-    <tr>
-    <td><h6>2018 Fall Prices</h6></td>
-    <td><h6><strong><%= @lesson.fall %> eur/night</strong></h6></td>
-  </tr>
-    <tr>
-    <td><h6>2018 Winter Prices</h6></td>
-    <td><h6><strong><%= @lesson.winter %> eur/night</strong></h6></td>
-  </tr>
-</table>
- <h6><strong>(minimum stay: <%= @lesson.minimum_stay %> nights)</strong></h6>
-<hr>
-<div class='text-center'>
-<h6><strong>Prices not including:</strong><br>
-- Cleaning: <strong><%= @lesson.cleaning %> eur per stay.</strong><br>
-- Stay taxes: 1eur/night/pers
-<br><br>
-<strong>Deposit Garantee: <%= @lesson.deposit_garantee %></strong>
-</h6>
-</div>
+                 <%= cl_image_tag @lesson.photos.first.path, width: 400, height: 200, crop: :fill %></div>
+                  <div class="carousel-caption">Chambre</div>
+                </div>
+                <!-- Page 3 -->
+                <div class="item">
+                  <div class="carousel-page">
+                     <%= cl_image_tag @lesson.photos.first.path, width: 400, height: 200, crop: :fill %>
+                  </div>
+                  <div class="carousel-caption">Salle de bain</div>
+                </div>
+              </div>
+              <!-- Contrôles -->
+              <a class="left carousel-control" href="#my_carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#my_carousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div>
+            <table style="width:80%">
+              <tr>
+                <th><h6><strong>Periods:</strong></h6></th>
+                <th><h6><strong>Prices:</strong></h6></th>
+              </tr>
+              <tr>
+                <td><h6>2018 Spring Prices</h6></td>
+                <td><h6><strong><%= @lesson.spring %> eur/night</strong></h6></td>
+              </tr>
+              <tr>
+                <td><h6>2018 Summer Prices</h6></td>
+                <td><h6><strong><%= @lesson.summer %> eur/night</strong></h6></td>
+              </tr>
+              <tr>
+                <td><h6>2018 Fall Prices</h6></td>
+                <td><h6><strong><%= @lesson.fall %> eur/night</strong></h6></td>
+              </tr>
+              <tr>
+                <td><h6>2018 Winter Prices</h6></td>
+                <td><h6><strong><%= @lesson.winter %> eur/night</strong></h6></td>
+              </tr>
+            </table>
+            <h6><strong>(minimum stay: <%= @lesson.minimum_stay %> nights)</strong></h6>
+            <hr>
+            <div class='text-center'>
+              <h6><strong>Prices not including:</strong><br>
+                - Cleaning: <strong><%= @lesson.cleaning %> eur per stay.</strong><br>
+                - Stay taxes: 1eur/night/pers
+                <br>
+                <strong>Deposit Garantee: <%= @lesson.deposit_garantee %></strong>
+              </h6>
+            </div>
 
-        </div>
-        <div class="col-md-6">
-         <h3><%= @lesson.name %></h3>
-         <h4><%= @lesson.golf %>
-         </h4>
-         <h5>starting from: <strong><%= @lesson.minimum_price %> eur/night</strong></h5>
-         <hr>
-         <div class="row">
-          <%= image_tag "vigiers.png", class:"card-user-large" %>
-          <h5><%= @lesson.description %></h5>
-          <div class="col-md-6 text-left">
-            <ul>
-              <li><h6>Rooms: <strong><%= @lesson.rooms %></strong></h6></li>
-              <li><h6>Bathroom: <strong><%= @lesson.bathroom %></strong></h6></li>
-              <li><h6>Max number of pers.: <strong><%= @lesson.maximum_person %></strong></h6></li>
-              <li><h6>Parking area: <strong><%= @lesson.parking_area %></strong></h6></li>
-            </ul>
           </div>
-          <div class="col-md-6 text-left">
-            <ul>
-              <li><h6>Swiming Pool: <strong><%= @lesson.swiming_pool %></strong></h6></li>
-              <li><h6>Air Conditioning: <strong><%= @lesson.air_conditioning %></strong></h6></li>
-              <li><h6>Internet acces by Wifi: <strong><%= @lesson.internet_acces %></strong></h6></li>
-              <li><h6>Smoking: <strong><%= @lesson.smoking %></strong></h6></li>
-            </ul>
+          <div class="col-md-6">
+           <h3><%= @lesson.name %></h3>
+           <h4><%= @lesson.golf %>
+           </h4>
+           <h5>starting from: <strong><%= @lesson.minimum_price %> eur/night</strong></h5>
+           <hr>
+           <div class="row">
+            <%= image_tag "vigiers.png", class:"card-user-large" %>
+            <h5><%= @lesson.description %></h5>
+            <div class="col-md-6 text-left">
+              <ul>
+                <li><h6>Rooms: <strong><%= @lesson.rooms %></strong></h6></li>
+                <li><h6>Bathroom: <strong><%= @lesson.bathroom %></strong></h6></li>
+                <li><h6>Max number of pers.: <strong><%= @lesson.maximum_person %></strong></h6></li>
+                <li><h6>Parking area: <strong><%= @lesson.parking_area %></strong></h6></li>
+              </ul>
+            </div>
+            <div class="col-md-6 text-left">
+              <ul>
+                <li><h6>Swiming Pool: <strong><%= @lesson.swiming_pool %></strong></h6></li>
+                <li><h6>Air Conditioning: <strong><%= @lesson.air_conditioning %></strong></h6></li>
+                <li><h6>Internet acces by Wifi: <strong><%= @lesson.internet_acces %></strong></h6></li>
+                <li><h6>Smoking: <strong><%= @lesson.smoking %></strong></h6></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <hr>
-        <div class="text-center">
-          <h5><%= link_to 'Need more information', qui_path, class:'btn btn-info' %> or <%= link_to "#{@lesson.homeaway_link}", class:'btn btn-info', target: :_blank do %>  Book online with: <%= image_tag "abritel.png", width: 60 %><% end %></h5>
+          <hr>
+          <div class="text-center">
+            <h5><%= link_to 'Need more information', qui_path, class:'btn btn-info' %> or <%= link_to "#{@lesson.homeaway_link}", class:'btn btn-info', target: :_blank do %>  Book online with: <%= image_tag "abritel.png", width: 60 %><% end %></h5>
 
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<div class='text-center'>
-  <h5> <%= link_to 'Back to Properties', lessons_path %> </h5>
-</div>
+  <div class='text-center'>
+    <h5> <%= link_to 'Back to Properties', lessons_path %> </h5>
+  </div>
 </div>
 </section>
