@@ -7,19 +7,19 @@ class LessonsController < ApplicationController
   def index
     @lessons = Lesson.all
 
-      @markers = @lessons.map do |lesson|
-    {
-      lat: lesson.latitude,
+    @markers = @lessons.map do |lesson|
+      {
+        lat: lesson.latitude,
         lng: lesson.longitude#,
       #   infoWindow: { content: render_to_string(partial: "/lessons/map_box", locals: { lesson: lesson }) }
-      }
-    end
+    }
   end
+end
 
   # GET /lessons/1
   # GET /lessons/1.json
   def show
-  end
+ end
 
   # GET /lessons/new
   def new
@@ -39,9 +39,11 @@ class LessonsController < ApplicationController
       if @lesson.save
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
         format.json { render :show, status: :created, location: @lesson }
+
       else
         format.html { render :new }
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
+
       end
     end
   end
@@ -53,6 +55,9 @@ class LessonsController < ApplicationController
       if @lesson.update(lesson_params)
         format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
         format.json { render :show, status: :ok, location: @lesson }
+
+
+
       else
         format.html { render :edit }
         format.json { render json: @lesson.errors, status: :unprocessable_entity }
@@ -80,4 +85,4 @@ class LessonsController < ApplicationController
     def lesson_params
       params.require(:lesson).permit(:name, :description, :size, :sleep, :rooms, :bathroom, :minimum_stay, :address, :minimum_price, :maximum_person, :deposit_garantee, :cleaning, :parking_area, :swiming_pool, :air_conditioning, :internet_acces, :smoking, :homeaway_link, :golf, :spring, :summer, :fall, :winter, photos: [ ])
     end
-end
+  end
