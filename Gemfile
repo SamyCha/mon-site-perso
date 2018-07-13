@@ -22,6 +22,7 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'carrierwave', '~> 1.2'
+gem 'mailgun-ruby', '~>1.1.6'
 
 
 group :development do
