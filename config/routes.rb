@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
-  resources :labels
   resources :lessons
   devise_for :users
   root to: 'pages#home'
 
 
 mount Attachinary::Engine => " /attachinary "
+
+
+  get 'contact-me', to: 'messages#new', as: 'new_message'
+  post 'contact-me', to: 'messages#create', as: 'create_message'
 
 
 
